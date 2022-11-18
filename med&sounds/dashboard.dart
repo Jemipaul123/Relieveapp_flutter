@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
+
 
 import 'mycolors.dart';
+import 'new_screen.dart';
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
 
@@ -121,9 +122,10 @@ Container(
                 ),
                 SizedBox(width:10,),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children:[
                     Text("Stress Relaxing",style: TextStyle(fontSize: 18,color:Colors.black,fontWeight: FontWeight.w700),),
-
+                    Text("10 minutes"),
                   ],
                 ),
                 Spacer(),
@@ -132,11 +134,117 @@ Container(
       },
         backgroundColor: MyColors.lightBlue,
         child: Icon(Icons.play_arrow,color: Colors.white,),
-      )
+      ),
         ],
-            )
+            ),
+            SizedBox(height: 20,),
+            Text("Activities",style: TextStyle(fontSize: 15,color:Colors.white,fontWeight: FontWeight.w700),),
+            SizedBox(height: 10,),
+
+             Container(
+               height:170,
+               child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                   Container(
+
+                        width:130,
+                        decoration: BoxDecoration(
+                          color: MyColors.lightBlue,
+                          borderRadius: BorderRadius.all(Radius.circular(12))
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: Column(
+                            children: [
+                              Text("Healing",style: TextStyle(fontSize: 15,color:Colors.white,fontWeight: FontWeight.w700),),
+                          Expanded(
+                            child: Image.asset("assets/pic1.png"),
+
+                          )
+                              ],
+
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 5,),
+                      Container(
+
+                        width:130,
+                        decoration: BoxDecoration(
+                            color: Colors.lightGreenAccent,
+                            borderRadius: BorderRadius.all(Radius.circular(12))
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: Column(
+                            children: [
+                              Text("Relaxing",style: TextStyle(fontSize: 15,color:Colors.white,fontWeight: FontWeight.w700),),
+                              Expanded(
+                                child: Image.asset("assets/pic2.png"),
+
+                              )
+                            ],
+
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 5,),
+                      Container(
+
+                        width:130,
+                        decoration: BoxDecoration(
+                            color: Colors.orangeAccent,
+                            borderRadius: BorderRadius.all(Radius.circular(12))
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: Column(
+                            children: [
+                              Text("Meditating",style: TextStyle(fontSize: 15,color:Colors.white,fontWeight: FontWeight.w700),),
+                              Expanded(
+                                child: Image.asset("assets/pic4.png"),
+
+                              )
+                            ],
+
+                          ),
+                        ),
+                      ),
+
+                    ],
+
+
+
+            ),
+             )
      ],
+
     ),
+      ),
+      bottomNavigationBar: Container(
+        decoration:
+          BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(20),
+              topLeft: Radius.circular(20),
+            ),
+            boxShadow: [
+              BoxShadow(color:Colors.black38,spreadRadius:0,blurRadius: 10)
+            ]
+          ),
+        child:BottomNavigationBar(
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.black38,
+          items:[
+            BottomNavigationBarItem(icon:Icon( Icons.home,color:Colors.black38,), label:"Home"),
+        BottomNavigationBarItem(icon: Icon(Icons.cloud,color:Colors.black38), label:"Home"),
+    BottomNavigationBarItem(icon: Icon(Icons.nights_stay_rounded,color:Colors.black38), label:"Home"),
+    BottomNavigationBarItem(icon: Icon(Icons.person,color:Colors.black38), label:"Home"),
+
+
+          ],
+          )
       ),
     );
   }
