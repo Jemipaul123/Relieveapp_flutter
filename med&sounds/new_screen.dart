@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 import 'mycolors.dart';
 
 class NewScreen extends StatefulWidget {
@@ -38,7 +39,7 @@ class _NewScreenState extends State<NewScreen> {
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 70, vertical:20),
-            child: Image.asset("assets/pic4.png", width: 200,height: 300, fit: BoxFit.fill,),
+            child: Image.asset("assets/pic4.png", width: 350,height: 300, fit: BoxFit.fill,),
           ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -46,23 +47,35 @@ class _NewScreenState extends State<NewScreen> {
                 Text("Finding Your True self", style: TextStyle(fontSize:22, fontWeight:FontWeight.bold)),
                SizedBox(height: 10,),
 
-                Text("By Ford Miller", style: TextStyle(fontSize:22),)
+                Text("By Ford Miller", style: TextStyle(fontSize:22),),
+                SizedBox(width:20,),
+                Text("\n \n 2:32",style: TextStyle(fontSize:16, color:MyColors.lightBlue),),
               ],
             ),
           SizedBox(height: 30,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(width:20,),
-              Text("2:32",style: TextStyle(fontSize:16, color:MyColors.lightBlue),),
 
-                SizedBox(width:20,),
-                Text("2:32",style: TextStyle(fontSize:16, color:MyColors.lightBlue),),
+              SizedBox(width: 20,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children:[
+                  IconButton(onPressed:(){}, icon: Icon(Icons.replay)),
+                  FloatingActionButton(onPressed: (){},
+                    backgroundColor: MyColors.lightBlue,
+                    child: Icon(Icons.play_arrow, color: Colors.white,),
+
+                  ),
+                  IconButton(onPressed: (){}, icon: Icon(Icons.forward)),
+                ]
+              )
 
 
 
             ],
-          )
+          ),
+
         ],
       ),
 
