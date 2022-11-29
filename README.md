@@ -1,4 +1,4 @@
-# MentalHealthApp_flutter
+# RelieveApp_flutter- A mental health app
 It is a mental health app which has the following features:
 * Mediation and sound
 * Mental diseases and their symptoms
